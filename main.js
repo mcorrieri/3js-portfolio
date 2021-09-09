@@ -60,6 +60,7 @@ Array(500).fill().forEach(addStar);
 const spaceTexture = new THREE.TextureLoader().load("earth.jpeg");
 scene.background = spaceTexture;
 
+// mike cube
 const mikeTexture = new THREE.TextureLoader().load("34900.jpeg");
 const mike = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
@@ -67,6 +68,15 @@ const mike = new THREE.Mesh(
 );
 
 scene.add(mike);
+
+// mars
+const marsTexture = new THREE.TextureLoader().load("marsview.jpeg");
+const mars = new THREE.Mesh(
+  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.MeshStandardMaterial({ map: marsTexture })
+);
+
+scene.add(mars);
 
 function animate() {
   requestAnimationFrame(animate);
