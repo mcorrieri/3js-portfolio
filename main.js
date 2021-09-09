@@ -21,7 +21,7 @@ camera.position.setZ(30);
 
 renderer.render(scene, camera);
 
-const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+const geometry = new THREE.TorusGeometry(10, 3, 100, 16);
 const material = new THREE.MeshStandardMaterial({
   color: "orange",
   //   wireframe: true,
@@ -36,9 +36,10 @@ const ambLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight, ambLight);
 
 // wireframe pointers
-const lightHelp = new THREE.PointLightHelper(pointLight);
-const gridHelp = new THREE.GridHelper(200, 50);
-scene.add(lightHelp, gridHelp);
+// const lightHelp = new THREE.PointLightHelper(pointLight);
+// const gridHelp = new THREE.GridHelper(200, 50);
+// scene.add(lightHelp, gridHelp);
+
 // pointer control
 const controls = new OrbitControls(camera, renderer.domElement);
 
@@ -55,7 +56,7 @@ function addStar() {
   scene.add(star);
 }
 
-Array(500).fill().forEach(addStar);
+Array(300).fill().forEach(addStar);
 
 const spaceTexture = new THREE.TextureLoader().load("earth.jpeg");
 scene.background = spaceTexture;
@@ -69,6 +70,9 @@ const mike = new THREE.Mesh(
 
 scene.add(mike);
 
+mike.position.z = 23;
+mike.position.setX(10);
+
 // mars
 const marsTexture = new THREE.TextureLoader().load("marsview.jpeg");
 const mars = new THREE.Mesh(
@@ -77,6 +81,24 @@ const mars = new THREE.Mesh(
 );
 
 scene.add(mars);
+
+mars.position.z = 20;
+mars.position.setX(-10);
+
+function moveCamera() {
+  const t = document.body.getBoundingClientRect().top;
+  mars.rotation.x += 0.05;
+  mars.rotation.y += 0.075;
+  mars.rotation.z += 0.05;
+
+  mike.rotation.y += 0.01;
+  mike.rotation.z += 0.01;
+
+  camera.position.z = t * -0.01;
+  camera.position.y = t * -0.0002;
+  camera.position.x = t * -0.0002;
+}
+document.body.onscroll = moveCamera;
 
 function animate() {
   requestAnimationFrame(animate);
