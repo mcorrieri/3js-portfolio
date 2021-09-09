@@ -55,7 +55,18 @@ function addStar() {
   scene.add(star);
 }
 
-Array(200).fill().forEach(addStar);
+Array(500).fill().forEach(addStar);
+
+const spaceTexture = new THREE.TextureLoader().load("earth.jpeg");
+scene.background = spaceTexture;
+
+const mikeTexture = new THREE.TextureLoader().load("34900.jpeg");
+const mike = new THREE.Mesh(
+  new THREE.BoxGeometry(3, 3, 3),
+  new THREE.MeshBasicMaterial({ map: mikeTexture })
+);
+
+scene.add(mike);
 
 function animate() {
   requestAnimationFrame(animate);
