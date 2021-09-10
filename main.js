@@ -17,7 +17,7 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(30);
+camera.position.setZ(50);
 
 renderer.render(scene, camera);
 
@@ -28,7 +28,7 @@ const material = new THREE.MeshStandardMaterial({
 });
 const torusKnot = new THREE.Mesh(geometry, material);
 
-scene.add(torusKnot);
+// scene.add(torusKnot);
 
 const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(5, 5, 5);
@@ -58,7 +58,7 @@ function addStar() {
 
 Array(300).fill().forEach(addStar);
 
-const spaceTexture = new THREE.TextureLoader().load("earth.jpeg");
+const spaceTexture = new THREE.TextureLoader().load("galaxy.jpeg");
 scene.background = spaceTexture;
 
 // mike cube

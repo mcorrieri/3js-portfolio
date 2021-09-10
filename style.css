@@ -28,7 +28,9 @@ blockquote {
 header {
   grid-column: 2 / span 5;
   font-size: 2.5rem;
-  padding: 2rem;
+  padding: 0.5rem;
+  background: black;
+  margin-bottom: 4rem;
 }
 
 section {
@@ -36,4 +38,6 @@ section {
   padding: 1rem;
   font-size: 1.5rem;
   line-height: 1.5;
+  background: black;
+  margin-bottom: 5rem;
 }
