@@ -30,7 +30,7 @@ header {
   font-size: 2.5rem;
   padding: 0.5rem;
   background: black;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 }
 
 section {
@@ -39,5 +39,10 @@ section {
   font-size: 1.5rem;
   line-height: 1.5;
   background: black;
-  margin-bottom: 5rem;
+  margin-bottom: 7rem;
+}
+
+html,
+body {
+  overscroll-behavior: none;
 }

@@ -17,7 +17,8 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(50);
+camera.position.setZ(30);
+camera.position.setX(-3);
 
 renderer.render(scene, camera);
 
@@ -70,8 +71,8 @@ const mike = new THREE.Mesh(
 
 scene.add(mike);
 
-mike.position.z = 23;
-mike.position.setX(10);
+mike.position.z = -5;
+mike.position.setX(2);
 
 // mars
 const marsTexture = new THREE.TextureLoader().load("marsview.jpeg");
@@ -82,14 +83,14 @@ const mars = new THREE.Mesh(
 
 scene.add(mars);
 
-mars.position.z = 20;
+mars.position.z = -5;
 mars.position.setX(-10);
 
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
-  mars.rotation.x += 0.05;
+  mars.rotation.x += 0.005;
   mars.rotation.y += 0.075;
-  mars.rotation.z += 0.05;
+  mars.rotation.z += 0.015;
 
   mike.rotation.y += 0.01;
   mike.rotation.z += 0.01;
