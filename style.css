@@ -46,3 +46,7 @@ html,
 body {
   overscroll-behavior: none;
 }
+
+#languages {
+  padding: 20px;
+}
