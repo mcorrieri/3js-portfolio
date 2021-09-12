@@ -56,3 +56,7 @@ body {
   height: 400px;
   width: auto;
 }
+
+#project {
+  margin-bottom: 5rem;
+}
