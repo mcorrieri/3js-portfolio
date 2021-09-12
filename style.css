@@ -51,3 +51,8 @@ body {
 #languages {
   display: flex;
 }
+
+#project-img {
+  height: 400px;
+  width: auto;
+}
