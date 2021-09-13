@@ -5,7 +5,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(
-  75,
+  60,
   window.innerWidth / window.innerHeight,
   0.1,
   1000
@@ -22,14 +22,14 @@ camera.position.setX(-3);
 
 renderer.render(scene, camera);
 
-const geometry = new THREE.TorusGeometry(10, 3, 100, 16);
+const geometry = new THREE.TorusGeometry(10, 3, 70, 16);
 const material = new THREE.MeshStandardMaterial({
-  color: "orange",
+  color: "green",
   //   wireframe: true,
 });
 const torusKnot = new THREE.Mesh(geometry, material);
 
-// scene.add(torusKnot);
+scene.add(torusKnot);
 
 const pointLight = new THREE.PointLight(0xffffff);
 pointLight.position.set(5, 5, 5);
