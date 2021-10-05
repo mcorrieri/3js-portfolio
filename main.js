@@ -25,7 +25,7 @@ renderer.render(scene, camera);
 const geometry = new THREE.TorusGeometry(10, 3, 70, 16);
 const material = new THREE.MeshStandardMaterial({
   color: "green",
-  //   wireframe: true,
+  wireframe: true,
 });
 const torusKnot = new THREE.Mesh(geometry, material);
 
